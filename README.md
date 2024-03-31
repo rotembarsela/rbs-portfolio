@@ -14,7 +14,7 @@ This is a portfolio website built using React, designed to showcase my skills, p
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
