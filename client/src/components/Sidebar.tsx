@@ -1,21 +1,20 @@
-import PixelProfile from "@/assets/pixel-profile.webp";
+import Profile from "@/assets/profile.webp";
 import LinkedinIcon from "@/assets/linkedin-logo.svg?react";
 import GithubLogo from "@/assets/github-logo.svg?react";
 import FacebookLogo from "@/assets/facebook-logo.svg?react";
-import SunLogo from "@/assets/sun-logo.svg?react";
-import { Logo } from "./Logo";
 import { LinkLogo } from "./LinkLogo";
 import { SideBarLinks } from "./SideBarLinks";
 import { data } from "@/lib/data";
+import { DarkModeToggler } from "./DarkModeToggler";
 
 export const Sidebar = () => {
   return (
     <section className="w-full h-full flex flex-col items-center justify-between px-8 py-12">
       <div className="w-3/4 flex flex-col items-center gap-12">
         <img
-          src={PixelProfile}
+          src={Profile}
           alt="profile"
-          className="w-14 h-[82px] select-none rounded-lg"
+          className="w-14 h-[82px] select-none rounded-lg shadow-lg"
           draggable={false}
         />
         <div className="flex flex-col items-center">
@@ -38,7 +37,7 @@ export const Sidebar = () => {
         </div>
         <SideBarLinks links={data.sideBarLinks} />
       </div>
-      <Logo svgIcon={SunLogo} />
+      <DarkModeToggler />
     </section>
   );
 };

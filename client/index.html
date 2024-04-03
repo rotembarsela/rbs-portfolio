@@ -9,5 +9,9 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      const selectedTheme = localStorage.getItem("theme") === "true";
+      document.documentElement.classList.toggle("dark", selectedTheme);
+    </script>
   </body>
 </html>

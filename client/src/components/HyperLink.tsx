@@ -4,20 +4,22 @@ import clsx from "clsx";
 import { PropsWithChildren } from "react";
 
 type HyperLinkProps = {
-  className: string;
+  classNames: string;
+  activeLinkClassNames: string;
 } & PropsWithChildren;
 
 export const HyperLink = <TTo extends string = "">({
-  className,
+  classNames,
+  activeLinkClassNames,
   ...props
 }: LinkOptions<RT, "/", TTo> & HyperLinkProps) => {
   const defaultClassNames = "";
   return (
     <Link
       {...props}
-      className={clsx(defaultClassNames, className)}
+      className={clsx(defaultClassNames, classNames)}
       activeProps={{
-        className: "font-bold",
+        className: activeLinkClassNames,
       }}
     />
   );
