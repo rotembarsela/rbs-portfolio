@@ -18,6 +18,8 @@ import { Route as LayoutImport } from "./routes/_layout";
 // Create Virtual Routes
 
 const LayoutIndexLazyImport = createFileRoute("/_layout/")();
+const LayoutProjectsLazyImport = createFileRoute("/_layout/projects")();
+const LayoutContactLazyImport = createFileRoute("/_layout/contact")();
 const LayoutAboutLazyImport = createFileRoute("/_layout/about")();
 
 // Create/Update Routes
@@ -32,6 +34,20 @@ const LayoutIndexLazyRoute = LayoutIndexLazyImport.update({
   getParentRoute: () => LayoutRoute,
 } as any).lazy(() =>
   import("./routes/_layout/index.lazy").then((d) => d.Route),
+);
+
+const LayoutProjectsLazyRoute = LayoutProjectsLazyImport.update({
+  path: "/projects",
+  getParentRoute: () => LayoutRoute,
+} as any).lazy(() =>
+  import("./routes/_layout/projects.lazy").then((d) => d.Route),
+);
+
+const LayoutContactLazyRoute = LayoutContactLazyImport.update({
+  path: "/contact",
+  getParentRoute: () => LayoutRoute,
+} as any).lazy(() =>
+  import("./routes/_layout/contact.lazy").then((d) => d.Route),
 );
 
 const LayoutAboutLazyRoute = LayoutAboutLazyImport.update({
@@ -53,6 +69,14 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof LayoutAboutLazyImport;
       parentRoute: typeof LayoutImport;
     };
+    "/_layout/contact": {
+      preLoaderRoute: typeof LayoutContactLazyImport;
+      parentRoute: typeof LayoutImport;
+    };
+    "/_layout/projects": {
+      preLoaderRoute: typeof LayoutProjectsLazyImport;
+      parentRoute: typeof LayoutImport;
+    };
     "/_layout/": {
       preLoaderRoute: typeof LayoutIndexLazyImport;
       parentRoute: typeof LayoutImport;
@@ -63,7 +87,12 @@ declare module "@tanstack/react-router" {
 // Create and export the route tree
 
 export const routeTree = rootRoute.addChildren([
-  LayoutRoute.addChildren([LayoutAboutLazyRoute, LayoutIndexLazyRoute]),
+  LayoutRoute.addChildren([
+    LayoutAboutLazyRoute,
+    LayoutContactLazyRoute,
+    LayoutProjectsLazyRoute,
+    LayoutIndexLazyRoute,
+  ]),
 ]);
 
 /* prettier-ignore-end */
