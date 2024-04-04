@@ -25,14 +25,17 @@ export const Sidebar = () => {
           <LinkLogo
             svgIcon={LinkedinIcon}
             link={import.meta.env.VITE_LINKEDIN_URL}
+            className="animated-link"
           />
           <LinkLogo
             svgIcon={GithubLogo}
             link={import.meta.env.VITE_GITHUB_URL}
+            className="animated-link"
           />
           <LinkLogo
             svgIcon={FacebookLogo}
             link={import.meta.env.VITE_FACEBOOK_URL}
+            className="animated-link"
           />
         </div>
         <SideBarLinks links={data.sideBarLinks} />

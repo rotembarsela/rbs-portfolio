@@ -35,7 +35,11 @@ export const DarkModeToggler = () => {
       onClick={toggleDarkMode}
       role="switch"
     >
-      {darkMode ? <Logo svgIcon={SunLogo} /> : <Logo svgIcon={MoonLogo} />}
+      {darkMode ? (
+        <Logo svgIcon={SunLogo} fill="#FFCC33" />
+      ) : (
+        <Logo svgIcon={MoonLogo} fill="#F6F1D5 " />
+      )}
     </Button>
   );
 };

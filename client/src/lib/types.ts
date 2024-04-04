@@ -5,6 +5,7 @@ export type RT = RegisteredRouter["routeTree"];
 export interface TanstackLink {
   link: RoutePaths<RT>;
   title: string;
+  value: string;
 }
 
 export interface Product {
