@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "./Button";
-import { Logo } from "./Logo";
-import SunLogo from "@/assets/sun-logo.svg?react";
-import MoonLogo from "@/assets/moon-logo.svg?react";
+import { Input } from "./ui/Input";
 
 export const DarkModeToggler = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -24,22 +21,23 @@ export const DarkModeToggler = () => {
     setDarkMode((prevMode) => !prevMode);
   };
 
-  if (loading) {
-    return null;
-  }
+  if (loading) return null;
 
   return (
-    <Button
-      type="button"
-      title="DarkMode Toggle"
-      onClick={toggleDarkMode}
-      role="switch"
+    <label
+      htmlFor="darkMode"
+      className="relative h-8 w-14 cursor-pointer rounded-full bg-neutral-950 transition [-webkit-tap-highlight-color:_transparent] dark:has-[:checked]:bg-white"
     >
-      {darkMode ? (
-        <Logo svgIcon={SunLogo} fill="#FFCC33" />
-      ) : (
-        <Logo svgIcon={MoonLogo} fill="#F6F1D5 " />
-      )}
-    </Button>
+      <Input
+        type="checkbox"
+        id="darkMode"
+        className="peer sr-only"
+        role="switch"
+        onChange={toggleDarkMode}
+        title="DarkMode Toggle"
+        checked={darkMode}
+      />
+      <span className="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-all peer-checked:start-6 dark:bg-neutral-950"></span>
+    </label>
   );
 };

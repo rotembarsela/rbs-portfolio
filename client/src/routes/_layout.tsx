@@ -11,7 +11,7 @@ function LayoutComponent() {
       <div className="w-1/3 min-h-full bg-transparent border-r-2 border-r-neutral-300/70">
         <Sidebar />
       </div>
-      <div className="w-full min-h-full m-3 rounded-xl">
+      <div className="w-full min-h-full px-8 py-12 rounded-xl">
         <Outlet />
       </div>
     </main>
