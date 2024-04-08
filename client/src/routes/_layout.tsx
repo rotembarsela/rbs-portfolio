@@ -1,5 +1,6 @@
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { Outlet, createFileRoute } from "@tanstack/react-router";
-import { Sidebar } from "@/components/Sidebar";
 
 export const Route = createFileRoute("/_layout")({
   component: LayoutComponent,
@@ -7,13 +8,12 @@ export const Route = createFileRoute("/_layout")({
 
 function LayoutComponent() {
   return (
-    <main className="flex h-full min-h-screen font-mono bg-custom-white text-neutral-900 dark:bg-custom-dark dark:text-slate-200">
-      <div className="w-1/3 min-h-full bg-transparent border-r-2 border-r-neutral-300/70">
-        <Sidebar />
-      </div>
-      <div className="w-full min-h-full px-8 py-12 rounded-xl">
+    <div className="flex-auto flex flex-col font-mono text-obsidian bg-white dark:text-white dark:bg-obsidian">
+      <Header />
+      <main role="main" className="flex-1">
         <Outlet />
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </div>
   );
 }

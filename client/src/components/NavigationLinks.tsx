@@ -1,27 +1,31 @@
 import { TanstackLink } from "@/lib/types";
 import { HyperLink } from "./HyperLink";
+import { ThemeToggle } from "./ThemeToggle";
 
-type SideBarLinksProps = {
+type NavigationLinksProps = {
   links: TanstackLink[];
 };
 
-export const SideBarLinks = ({ links }: SideBarLinksProps) => {
+export const NavigationLinks = ({ links }: NavigationLinksProps) => {
   return (
-    <ul className="w-full flex flex-col gap-7">
+    <ul className="flex items-center gap-7">
       {links.map((link) => (
         <li key={link.title}>
-          <SideBarLinkItem link={link} />
+          <NavigationLink link={link} />
         </li>
       ))}
+      <li>
+        <ThemeToggle />
+      </li>
     </ul>
   );
 };
 
-type SideBarLinkItemProps = {
+type NavigationLinkProps = {
   link: TanstackLink;
 };
 
-const SideBarLinkItem = ({ link: linkUrl }: SideBarLinkItemProps) => {
+const NavigationLink = ({ link: linkUrl }: NavigationLinkProps) => {
   const { link, title } = linkUrl;
 
   return (

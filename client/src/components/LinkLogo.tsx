@@ -1,4 +1,4 @@
-import { Logo, LogoProps } from "./Logo";
+import { Logo, LogoProps } from "./ui/Logo";
 
 type LinkLogoProps = {
   link: string;

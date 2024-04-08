@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Input } from "./ui/Input";
 
-export const DarkModeToggler = () => {
+export const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -26,7 +26,7 @@ export const DarkModeToggler = () => {
   return (
     <label
       htmlFor="darkMode"
-      className="relative h-8 w-14 cursor-pointer rounded-full bg-neutral-950 transition [-webkit-tap-highlight-color:_transparent] dark:has-[:checked]:bg-white"
+      className="relative block h-8 w-14 cursor-pointer rounded-full bg-obsidian transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-white focus-within:outline focus-within:outline-2 focus-within:outline-offset-2"
     >
       <Input
         type="checkbox"
@@ -37,7 +37,7 @@ export const DarkModeToggler = () => {
         title="DarkMode Toggle"
         checked={darkMode}
       />
-      <span className="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-all peer-checked:start-6 dark:bg-neutral-950"></span>
+      <span className="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-all peer-checked:start-6 dark:bg-obsidian"></span>
     </label>
   );
 };

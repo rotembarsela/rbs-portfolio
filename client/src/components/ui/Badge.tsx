@@ -1,4 +1,4 @@
-import { Logo, LogoProps } from "../Logo";
+import { Logo, LogoProps } from "./Logo";
 
 type BadgeProps = {
   value: string;
