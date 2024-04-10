@@ -24,7 +24,11 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   return (
-    <button className={cn(buttonVariants(variant)(), className)} {...props} />
+    <button
+      role="button"
+      className={cn(buttonVariants(variant)(), className)}
+      {...props}
+    />
   );
 };
 

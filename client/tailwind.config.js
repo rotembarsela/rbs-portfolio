@@ -4,11 +4,11 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        anton: ["Anton", "sans-serif"],
+      },
       colors: {
         obsidian: "#0B1215",
-      },
-      backgroundImage: {
-        "brand-logo": "url('/src/assets/logo.png')",
       },
     },
   },

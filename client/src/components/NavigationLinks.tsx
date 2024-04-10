@@ -1,5 +1,5 @@
 import { TanstackLink } from "@/lib/types";
-import { HyperLink } from "./HyperLink";
+import { RouteAnchor } from "./RouteAnchor";
 
 type NavigationLinksProps = {
   links: TanstackLink[];
@@ -25,12 +25,12 @@ const NavigationLink = ({ link: linkUrl }: NavigationLinkProps) => {
   const { link, title } = linkUrl;
 
   return (
-    <HyperLink
+    <RouteAnchor
       to={link}
       classNames="block w-full h-full px-3 py-2 text-left rounded-xl"
       activeLinkClassNames="font-bold bg-neutral-300/70"
     >
       {title}
-    </HyperLink>
+    </RouteAnchor>
   );
 };
