@@ -1,14 +1,13 @@
+import { SvgIcon } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import { FunctionComponent, SVGProps } from "react";
+import { SVGProps } from "react";
 
 export type LogoProps = {
-  svgIcon: FunctionComponent<SVGProps<SVGSVGElement>>;
+  svgIcon: SvgIcon;
 } & SVGProps<SVGSVGElement>;
 
-export const Logo = ({ svgIcon: SvgIcon, ...props }: LogoProps) => {
-  const { className } = props;
-
+export const Logo = ({ svgIcon: SvgIcon, className, ...props }: LogoProps) => {
   const defaultClassNames = "w-7 h-7 cursor-pointer";
 
-  return <SvgIcon {...props} className={cn(defaultClassNames, className)} />;
+  return <SvgIcon className={cn(defaultClassNames, className)} {...props} />;
 };

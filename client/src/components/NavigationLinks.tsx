@@ -1,6 +1,5 @@
 import { TanstackLink } from "@/lib/types";
 import { HyperLink } from "./HyperLink";
-import { ThemeToggle } from "./ThemeToggle";
 
 type NavigationLinksProps = {
   links: TanstackLink[];
@@ -14,9 +13,6 @@ export const NavigationLinks = ({ links }: NavigationLinksProps) => {
           <NavigationLink link={link} />
         </li>
       ))}
-      <li>
-        <ThemeToggle />
-      </li>
     </ul>
   );
 };

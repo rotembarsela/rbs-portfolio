@@ -1,6 +1,7 @@
 import { data } from "@/lib/data";
 import { HyperLink } from "./HyperLink";
 import { NavigationLinks } from "./NavigationLinks";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const Header = () => {
   return (
@@ -19,6 +20,7 @@ export const Header = () => {
             rbs.
           </HyperLink>
           <NavigationLinks links={data.navigationLinks} />
+          <ThemeToggle />
         </nav>
       </div>
     </header>

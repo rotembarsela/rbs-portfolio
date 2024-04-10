@@ -1,3 +1,4 @@
+import { FunctionComponent, SVGProps } from "react";
 import { RegisteredRouter, RoutePaths } from "@tanstack/react-router";
 
 export type RT = RegisteredRouter["routeTree"];
@@ -14,3 +15,5 @@ export interface Product {
   price: number;
   description?: string;
 }
+
+export type SvgIcon = FunctionComponent<SVGProps<SVGSVGElement>>;
